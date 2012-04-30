@@ -16,6 +16,34 @@ There are a bazillion blog posts and books which cover the intricacies of JavaSc
         var firstName   // lower camel case for variable names
         var TAX_RATE    // uppercase for constant or known global
 
+* Naming conventions, cont'd. Separate the concerns between CSS classes for styling and CSS classes for JavaScript hooks. Do not to use the former in js code at all, and use a
+
+    **No**
+
+        <a href="#" class="btn btn-save">Save</a>
+        $(".btn").click(...); // "btn" is for presentation only
+
+    **Yes**
+
+        <a href="#" class="btn btn-save js-save-thing">Save</a>
+        $(".js-save-thing").click(...);
+
+    **No**
+
+        <a href="#" class="js-save-thing">Save</a>
+        .js-save-thing { /* no styling on js prepended classnames */
+            color: green;
+            padding: 10px;
+        }
+
+    **Yes**
+
+        <a href="#" class="js-save-thing my-button">Save</a>
+        .my-button {
+            color: green;
+            padding: 10px;
+        }
+
 * Combine `var` declarations for conciseness.
 
     **No**
