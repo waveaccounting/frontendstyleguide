@@ -16,7 +16,7 @@ There are a bazillion blog posts and books which cover the intricacies of JavaSc
         var firstName   // lower camel case for variable names
         var TAX_RATE    // uppercase for constant or known global
 
-* Naming conventions, cont'd. Separate the concerns between CSS classes for styling and CSS classes for JavaScript hooks. Do not to use the former in js code at all, and use a
+* Naming conventions, cont'd. Separate the concerns between CSS classes for styling and CSS classes for JavaScript hooks. Do not use the former in js code at all, and use a `js-` prefix on CSS classes for the latter. This helps tremendously when refactoring both visuals and behaviour.
 
     **No**
 
