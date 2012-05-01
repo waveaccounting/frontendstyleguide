@@ -339,3 +339,56 @@ There are a bazillion blog posts and books which cover the intricacies of JavaSc
 
         // faster
         $.data(elem, key, value);
+
+
+* Defining modules
+
+    Use [RequireJS](http://requirejs.org/) for defining.
+
+    **No**
+
+    var Cat = {
+			speak: function () {
+				alert('meow');
+			}
+    };
+
+    **Yes**
+
+    define(function () {
+			var Cat = {
+				speak: function () {
+					alert('meow');
+				}
+			};
+			return Cat;
+    });
+
+* Requiring dependencies
+
+		Load modules using RequireJS.
+
+		**No**
+		
+		var Cat = {
+			speak: function () {
+				// Expect jQuery to be accessible globally
+				$('#where').text('meow');
+			}
+		};
+
+		**Yes**
+		
+		define([
+				'jquery'
+			], function ($) {
+			var Cat = {
+				speak: function () {
+					// jQuery is explicitly loaded and named as $
+					$('#where').text('meow');
+				}
+			};
+			return Cat;
+		});
+
+
