@@ -343,52 +343,52 @@ There are a bazillion blog posts and books which cover the intricacies of JavaSc
 
 * Defining modules
 
-    Use [RequireJS](http://requirejs.org/) for defining.
+        Use [RequireJS](http://requirejs.org/) for defining modules.
 
     **No**
 
-    var Cat = {
-			speak: function () {
-				alert('meow');
-			}
-    };
+        var Cat = {
+          speak: function () {
+            alert('meow');
+          }
+        };
 
     **Yes**
 
-    define(function () {
-			var Cat = {
-				speak: function () {
-					alert('meow');
-				}
-			};
-			return Cat;
-    });
+        define(function () {
+          var Cat = {
+            speak: function () {
+              alert('meow');
+            }
+          };
+          return Cat;
+        });
 
-* Requiring dependencies
+    * Requiring dependencies
 
-		Load modules using RequireJS.
+        Load modules using RequireJS.
 
-		**No**
-		
-		var Cat = {
-			speak: function () {
-				// Expect jQuery to be accessible globally
-				$('#where').text('meow');
-			}
-		};
+    **No**
 
-		**Yes**
-		
-		define([
-				'jquery'
-			], function ($) {
-			var Cat = {
-				speak: function () {
-					// jQuery is explicitly loaded and named as $
-					$('#where').text('meow');
-				}
-			};
-			return Cat;
-		});
+        var Cat = {
+          speak: function () {
+            // Expect jQuery to be accessible globally
+            $('#where').text('meow');
+          }
+        };
+
+    **Yes**
+        
+        define([
+            'jquery'
+          ], function ($) {
+          var Cat = {
+            speak: function () {
+              // jQuery is explicitly loaded and named as $
+              $('#where').text('meow');
+            }
+          };
+          return Cat;
+        });
 
 
