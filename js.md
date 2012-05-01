@@ -364,7 +364,7 @@ There are a bazillion blog posts and books which cover the intricacies of JavaSc
           return Cat;
         });
 
-    * Requiring dependencies
+* Requiring dependencies
 
         Load modules using RequireJS.
 
