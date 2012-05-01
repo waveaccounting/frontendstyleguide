@@ -343,7 +343,7 @@ There are a bazillion blog posts and books which cover the intricacies of JavaSc
 
 * Defining modules
 
-		Use [RequireJS](http://requirejs.org/) for defining modules.
+    Use [RequireJS](http://requirejs.org/) for defining modules.
 
     **No**
 
@@ -366,7 +366,7 @@ There are a bazillion blog posts and books which cover the intricacies of JavaSc
 
 * Requiring dependencies
 
-		Load modules using RequireJS.
+    Load modules using RequireJS.
 
     **No**
 
