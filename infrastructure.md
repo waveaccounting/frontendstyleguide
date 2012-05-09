@@ -9,35 +9,22 @@ This document provides an overview of the infrastructure we have in place for fr
 
 We are using the following directory layout:
 
-    static/
+    +-static/
+      +-js/
+      | +-app/           # Source code
+      |   +-templates/  # JavaScript templates
+      |     +-...
+      +-fixtures/      # Fixtures for testing
       |
-      \
-       js/
-        |
-        \
-         app/           # Source code
-        | |
-        | \
-        |   templates/  # JavaScript templates
-        |   ...
-        |
-        \
-         fixtures/      # Fixtures for testing
-        |
-        \
-         lib/           # Third-party modules for app
-        |
-        \
-         reports/       # JUnit, coverage, lint reports
-        |
-        \
-         spec/          # Jasmine specs
-        |
-        \
-         tools/         # Build script, spec runner, etc.
-        |
-        \
-         vendor/        # Third-party resources (could be modules, HTML pages, images, etc)
+      +-lib/           # Third-party modules for app
+      |
+      +-reports/       # JUnit, coverage, lint reports
+      |
+      +-spec/          # Jasmine specs
+      |
+      +-tools/         # Build script, spec runner, etc.
+      |
+      +-vendor/        # Third-party resources (could be modules, HTML pages, images, etc)
 
 Each component will be described in detail in this document.
 
