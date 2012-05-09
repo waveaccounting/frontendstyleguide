@@ -11,20 +11,20 @@ We are using the following directory layout:
 
     +-static/
       +-js/
-      | +-app/           # Source code
+      | +-app/          # Source code
       |   +-templates/  # JavaScript templates
       |     +-...
-      +-fixtures/      # Fixtures for testing
+      +-fixtures/       # Fixtures for testing
       |
-      +-lib/           # Third-party modules for app
+      +-lib/            # Third-party modules for app
       |
-      +-reports/       # JUnit, coverage, lint reports
+      +-reports/        # JUnit, coverage, lint reports
       |
-      +-spec/          # Jasmine specs
+      +-spec/           # Jasmine specs
       |
-      +-tools/         # Build script, spec runner, etc.
+      +-tools/          # Build script, spec runner, etc.
       |
-      +-vendor/        # Third-party resources (could be modules, HTML pages, images, etc)
+      +-vendor/         # Third-party resources (could be modules, HTML pages, images, etc)
 
 Each component will be described in detail in this document.
 
