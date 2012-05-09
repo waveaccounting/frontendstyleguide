@@ -61,6 +61,10 @@ The usage of `exports` is similar to the CommonJS spec.
 ### Testing
 
 Testing is done using Jasmine and [Sinon](http://sinonjs.org/). 
+
+All specs should go into the `spec` folder and the filename must end with `.spec.coffee`. Otherwis they will not
+be picked up by the spec runner.
+
 To accommodate for AMD, begin each spec with the `define` function.
 
 **Example:**
