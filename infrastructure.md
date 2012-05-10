@@ -23,8 +23,6 @@ We are using the following directory layout:
       +-spec/           # Jasmine specs
       |
       +-tools/          # Build script, spec runner, etc.
-      |
-      +-vendor/         # Third-party resources (could be modules, HTML pages, images, etc)
 
 Each component will be described in detail in this document.
 
