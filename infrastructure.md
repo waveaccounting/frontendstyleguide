@@ -27,10 +27,9 @@ We are using the following directory layout:
 Each component will be described in detail in this document.
 
 
-### CoffeeScript
+### JavaScript and CoffeeScript
 
-All new modules are implemented using [CoffeeScript](http://coffeescript.org/). CoffeeScript is preferred
-over JavaScript because it allows modules to be written in a faster and safer way.
+All new modules should be implemented using [CoffeeScript](http://coffeescript.org/). Avoid adding new JavaScript `.js` files.
 
 
 ### Module System
