@@ -25,6 +25,7 @@ The content is an adaptation from another [CoffeeScript style guide](https://git
 * [Looping and Comprehensions](#looping_and_comprehensions)
 * [Extending Native Objects](#extending_native_objects)
 * [Exceptions](#exceptions)
+* [Documentation](#documentation)
 * [Miscellaneous](#miscellaneous)
 
 <a name="code_layout"/>
@@ -411,6 +412,49 @@ For example, do not modify `Array.prototype` to introduce `Array#forEach`.
 Do not suppress exceptions.
 
 
+<a name="documentation"/>
+
+## Documentation
+
+Use code blocks before classes, methods, and functions for documentation.
+
+Markdown syntax is encouraged.
+
+### What to document
+
+1. How an object/function is used giving an example.
+2. What are the expected input/output of the object (could just be an example like the one given above).
+3. What exceptions does the object raise on failure
+4. What events are triggered by the class and what they mean.
+
+### Documentation examples
+
+```coffeescript
+# Base class for all animals. Based on the Animal class example from the CoffeeScript documentation.
+#
+# See: http://jashkenas.github.com/coffee-script/#classes
+# 
+# Events triggered:
+#     * `move` - After the animal has moved.
+class Animal
+
+  # Arguments:
+  #     * name - Name of the animal. Can be a string or function that returns a string.
+  constructor: (@name) ->
+    if _.isFunction @name
+      @name = @name()
+
+  # Move the animal, triggering a `move` event.
+  move: (metres) ->
+    alert "#{@name} moved #{metres} metres"
+
+# Class representation of a snake.  It moves 5 metres at a time.
+class Snake extends Animal
+  # Moves the snake ahead by 5 metres.
+  move: ->
+    alert 'Slithering'
+    super(5)
+```
 
 <a name="miscellaneous"/>
 
