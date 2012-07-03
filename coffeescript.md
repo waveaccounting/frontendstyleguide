@@ -77,16 +77,16 @@ UTF-8 is the preferred source file encoding.
 
 Modules must begin with a AMD `define` statement.
 
-    ```coffeescript
-    define (require, exports, module) ->
-    ```
+```coffeescript
+define (require, exports, module) ->
+```
 
 Import statements using `require` should be on separate lines.
 
-    ```coffeescript
-    Core = require('core/main')
-    Transactions = requre('transactions/main')
-    ```
+```coffeescript
+Core = require('core/main')
+Transactions = requre('transactions/main')
+```
 
 Import statements should be grouped in the following order:
 
@@ -103,17 +103,17 @@ Avoid extraneous whitespace in the following situations:
 
 * Immediately inside parentheses, brackets or braces
 
-    ```coffeescript
-    ($('body')) # Yes
-    ( $('body')) # No
-    ```
+```coffeescript
+($('body')) # Yes
+( $('body')) # No
+```
 
 * Immediately before a comma
 
-    ```coffeescript
-    console.log(x, y) # Yes
-    console.log(x , y) # No
-    ```
+```coffeescript
+console.log(x, y) # Yes
+console.log(x , y) # No
+```
 
 Additional recommendations:
 
@@ -170,15 +170,15 @@ Each line of a block comment starts with a `#` and a single space, and should be
 
 Paragraphs inside of block comments are separated by a line containing a single `#`.
 
-    ```coffeescript
-    # This is a block comment. We should be describing the proceeding code.
-    #
-    # This is a second paragraph. We separate paragraphs with a blank comment
-    # line (single # with _no trailing whitespace_).
-    someView = new SomeView()
-    someView.$el.appendTo($content)
-    someView.render()
-    ```
+```coffeescript
+# This is a block comment. We should be describing the proceeding code.
+#
+# This is a second paragraph. We separate paragraphs with a blank comment
+# line (single # with _no trailing whitespace_).
+someView = new SomeView()
+someView.$el.appendTo($content)
+someView.render()
+```
 
 
 <a name="inline_comments"/>
@@ -192,16 +192,16 @@ All inline comments should start with a `#` and a single space.
 
 Avoid inline comments that describe the _how_ of the code when they do not improve clarity.
 
-    ```coffeescript
-    # No
-    x += 1 # Increment x
-    ```
+```coffeescript
+# No
+x += 1 # Increment x
+```
 
 Note that the _why_ of the code are generally good.
 
-    ```coffeescript
-    # Yes
-    x += 1 # Compensate for border
+```coffeescript
+# Yes
+x += 1 # Compensate for border
 ```
 
 <a name="annotations"/>
@@ -215,10 +215,10 @@ The annotation keyword is in all caps, followed by a colon and space.
 
 If multiple lines are required by the description, indent subsequent lines with two spaces:
 
-    ```coffeescript
-    # TODO: This is a long description of what needs to be done for this TODO. The next line
-    #   is proceeded by two spaces.
-    ```
+```coffeescript
+# TODO: This is a long description of what needs to be done for this TODO. The next line
+#   is proceeded by two spaces.
+```
 
 Other annotation types:
 
@@ -238,14 +238,14 @@ Use `CamelCase` to name all classes and modules.
 
 For "constants", use all uppercase with underscores:
 
-    ```coffeescript
-    CONSTANT_LIKE_THIS
-    ```
+```coffeescript
+CONSTANT_LIKE_THIS
+```
 
 Methods and variables that are intended to be "private" should begin with a leading underscore:
 
-    ```coffeescript
-    _privateMethod: ->
+```coffeescript
+_privateMethod: ->
 ```
 
 <a name="functions"/>
@@ -256,27 +256,27 @@ _(These guidelines also apply to the methods of a class.)_
 
 When declaring a function that takes arguments, always use a single space after the closing parenthesis of the arguments list:
 
-    ```coffeescript
-    foo = (arg1, arg2) -> # Yes
-    foo = (arg1, arg2)-> # No
-    ```
+```coffeescript
+foo = (arg1, arg2) -> # Yes
+foo = (arg1, arg2)-> # No
+```
 
 Do not use parentheses when declaring functions that take no arguments:
 
-    ```coffeescript
-    bar = -> # Yes
-    bar = () -> # No
-    ```
+```coffeescript
+bar = -> # Yes
+bar = () -> # No
+```
 
 In cases where method calls are being chained and the code does not fit on a single line, each call should be placed on a separate line and indented by one level (i.e., two spaces), with a leading `.`.
 
-    ```coffeescript
-    [1..3]
-      .map((x) -> x * x)
-      .concat([10..12])
-      .filter((x) -> x < 11)
-      .reduce((x, y) -> x + y)
-    ```
+```coffeescript
+[1..3]
+  .map((x) -> x * x)
+  .concat([10..12])
+  .filter((x) -> x < 11)
+  .reduce((x, y) -> x + y)
+```
 
 
 ### Omitting parentheses
@@ -288,29 +288,29 @@ When calling functions, omit or include parentheses in a way that optimizes read
 For example, calling functions with anonymous function arguments is a case where parentheses omission is usually better.
 
 
-    ```coffeescript
-    _.map [1..5], (x) -> x * x
+```coffeescript
+_.map [1..5], (x) -> x * x
 
-    foo.save (callback) ->
-        # Do something then execute callback function
+foo.save (callback) ->
+    # Do something then execute callback function
 
-        # ...        
+    # ...        
 
-        callback()
+    callback()
 
-    ```
+```
 
 The following is an example where omitting parentheses worsens readability.
 
-    ```coffeescript
-    new Foo a: 1, b: 2, 'bar'
-    ```
+```coffeescript
+new Foo a: 1, b: 2, 'bar'
+```
 
 The code is more clear when written with parentheses and braces.
 
-    ```coffeescript
-    new Foo({a: 1, b: 2}, 'bar')
-    ```
+```coffeescript
+new Foo({a: 1, b: 2}, 'bar')
+```
 
 _There is no hard and fast rule for omitting or including parentheses. Use your own judgement._
 
@@ -321,10 +321,10 @@ _There is no hard and fast rule for omitting or including parentheses. Use your 
 
 Use string interpolation instead of string concatenation:
 
-    ```coffeescript
-    "this is an #{adjective} string" # Yes
-    "this is an " + adjective + " string" # No
-    ```
+```coffeescript
+"this is an #{adjective} string" # Yes
+"this is an " + adjective + " string" # No
+```
 
 Prefer single quoted strings (`''`) instead of double quoted (`""`) strings, unless features like string interpolation are being used for the given string.
 
@@ -373,13 +373,13 @@ else ...
 Take advantage of comprehensions whenever possible:
 
 ```coffeescript
-  # Yes
-  result = (item.name for item in array)
+# Yes
+result = (item.name for item in array)
 
-  # No
-  results = []
-  for item in array
-    results.push item.name
+# No
+results = []
+for item in array
+  results.push item.name
 ```
 
 To filter:
@@ -428,53 +428,53 @@ Do not suppress exceptions.
 
 `or=` should be used when possible.
 
-    ```coffeescript
-    foo = (message) ->
-        message or= 'Hello World' # Yes
-        message = message or 'Hello World' # No
-    ```
+```coffeescript
+foo = (message) ->
+    message or= 'Hello World' # Yes
+    message = message or 'Hello World' # No
+```
 
 `?=` should be used for existential assigment when possible.
 
-    ```coffeescript
-    a = null
-    a ?= 1 # Yes
-    a = a or 1 # No
-    a = if a == null then 1 else a # No
-    ```
+```coffeescript
+a = null
+a ?= 1 # Yes
+a = a or 1 # No
+a = if a == null then 1 else a # No
+```
 
 _Note that `or=` and `?=` can only be used on variables that have already been declared.
 
 Prefer shorthand notation (`::`) for accessing an object's prototype:
 
-    ```coffeescript
-    Array::slice # Yes
-    Array.prototype.slice # No
-    ```
+```coffeescript
+Array::slice # Yes
+Array.prototype.slice # No
+```
 
 Prefer `@property` over `this.property`.
 
-    ```coffeescript
-    return @property # Yes
-    return this.property # No
-    ```
+```coffeescript
+return @property # Yes
+return this.property # No
+```
 
 However, avoid the use of **standalone** `@`:
 
-    ```coffeescript
-    return this # Yes
-    return @ # No
-    ```
+```coffeescript
+return this # Yes
+return @ # No
+```
 
 Omit `return` in single-line functions.
 
-    ```coffeescript
-    square = (x) -> x * x # Yes
-    square = (x) -> return x * x # No
-    ```
+```coffeescript
+square = (x) -> x * x # Yes
+square = (x) -> return x * x # No
+```
 
 Use splats (`...`) when working with functions that accept variable numbers of arguments:
 
-    ```coffeescript
-    foo = (a, b, c, rest...) ->
-    ```
+```coffeescript
+foo = (a, b, c, rest...) ->
+```
