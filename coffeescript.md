@@ -86,7 +86,7 @@ Import statements using `require` should be on separate lines.
 
 ```coffeescript
 Core = require('core/main')
-Transactions = requre('transactions/main')
+Transactions = require('transactions/main')
 ```
 
 Import statements should be grouped in the following order:
