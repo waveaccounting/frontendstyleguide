@@ -489,7 +489,7 @@ a = a or 1 # No
 a = if a == null then 1 else a # No
 ```
 
-_Note that `or=` and `?=` can only be used on variables that have already been declared.
+_Note that `or=` and `?=` can only be used on variables that have already been declared._
 
 Prefer shorthand notation (`::`) for accessing an object's prototype:
 
