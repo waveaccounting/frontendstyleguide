@@ -435,11 +435,13 @@ Markdown syntax is encouraged.
 # See: http://jashkenas.github.com/coffee-script/#classes
 # 
 # Events triggered:
-#     * `move` - After the animal has moved.
+#
+# * `move` - After the animal has moved.
 class Animal
 
   # Arguments:
-  #     * name - Name of the animal. Can be a string or function that returns a string.
+  #
+  # * name - Name of the animal. Can be a string or function that returns a string.
   constructor: (@name) ->
     if _.isFunction @name
       @name = @name()
