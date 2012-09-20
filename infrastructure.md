@@ -14,9 +14,11 @@ Inside the Django app folder, the JS app as the following structure. (assuming t
     +-static/
       +-js/
       |
-      | +-app/
+      +-app/
       |   |
       |   +-[my_app]/        # Source code
+      |     +-csmain.coffee  # Application code
+      |     +-main.js        # Entry point
       |     |
       |     +-templates/
       |       |
