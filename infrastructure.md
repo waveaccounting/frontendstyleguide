@@ -350,3 +350,13 @@ Example:
     myModule = new MyModule()
     myModule.toggle()
 
+
+**Resources**
+
+- [Underscore](http://underscorejs.org/)
+- [Backbone](http://backbonejs.org/)
+- [Backbone.stickit](http://nytimes.github.com/backbone.stickit/)
+- [Jasmine](https://github.com/pivotal/jasmine/wiki)
+- [Sinon](http://sinonjs.org)
+- [jasmine-sinon](https://github.com/froots/jasmine-sinon)
+- [jasmine-jquery](https://github.com/velesin/jasmine-jquery)
