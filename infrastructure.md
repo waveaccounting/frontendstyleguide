@@ -291,7 +291,7 @@ Example:
 
 ##### Data-Binding
 
-Data-binding is handled using the [Synapse](http://bruth.github.com/synapse/docs/) library.
+Data-binding is handled [Backbone.stickit](http://nytimes.github.com/backbone.stickit/) library.
 
 
 #### Mixins
