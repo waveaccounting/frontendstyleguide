@@ -7,22 +7,25 @@ This document provides an overview of the infrastructure we have in place for fr
 
 ### Directory Structure
 
-We are using the following directory layout:
+All JavaScript apps should be included in their corresponding Django apps.
+
+Inside the Django app folder, the JS app as the following structure. (assuming the app\'s name is `my_app`)
 
     +-static/
       +-js/
-      | +-app/          # Source code
-      |   +-templates/  # JavaScript templates
-      |     +-...
-      +-fixtures/       # Fixtures for testing
       |
-      +-lib/            # Third-party modules for app
+      | +-app/
+      |   |
+      |   +-[my_app]/        # Source code
+      |     |
+      |     +-templates/
+      |       |
+      |       +-[my_app]/    # JavaScript templates
+      |         |
+      |         +-...
+      +-lib/                 # Third-party modules for app
       |
-      +-reports/        # JUnit, coverage, lint reports
-      |
-      +-spec/           # Jasmine specs
-      |
-      +-tools/          # Build script, spec runner, etc.
+      +-spec/                # Jasmine specs
 
 Each component will be described in detail in this document.
 
@@ -41,7 +44,7 @@ The template for defining a module is as follows:
 
     define (require, exports, module) ->
       # Load a dependency
-      A = require('a')
+      A = require 'a'
 
       # Create the new module
       B = 
@@ -53,6 +56,33 @@ The template for defining a module is as follows:
 
 
 The usage of `exports` is similar to the CommonJS spec.
+
+
+### Main app file
+
+Each app needs to have two files:
+
+* **main.js**
+* **csmain.coffee**
+
+The `main.js` file serves as an entry point into the app (e.g. `require(['myapp/main'], ...)`) and its contents should be as follows:
+
+    define(['cs!./csmain'], function (CsMain) {
+      return CsMain;
+    });
+
+
+The contents of `csmain.coffee` will contain the actual code of your application.
+
+e.g.
+
+    define (require, exports, module) ->
+      MyApp = {}
+
+      MyApp.start = -> 
+        # Some code to run the app...
+      
+      exports = MyApp
 
 
 ### Testing
