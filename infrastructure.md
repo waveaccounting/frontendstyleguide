@@ -236,7 +236,7 @@ This removes inter-modular dependencies from disparate modules.
       Mediator = require('mediator')
 
       class A
-        constructure: (@name) ->
+        constructor: (@name) ->
 
         doSomething: ->
           Mediator.publish('somethingDone', @)
