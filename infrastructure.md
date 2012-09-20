@@ -212,7 +212,8 @@ missing features (such as Deferreds) because returning the `$` object.
 
 Example of using the Facade:
 
-    Facade = require('facade')
+    Core = require 'core/main'
+    Facade = Core.Facade
     $ = Facade.$
 
     # This could be jQuery or Zepto... or something else?
@@ -276,6 +277,8 @@ Notice that even though `A` and `B` are not dependent on each other, an event fr
 
 MV* is done using the [Backbone](http://documentcloud.github.com/backbone/) library.
 
+**Note:** Backbone is aliased to `Facade.mvc`.
+
 All of our UIs need to be built using Models and Views.
 
 **Templates** are rendered using [Handlebars](http://handlebarsjs.com/) and are loaded 
@@ -316,7 +319,7 @@ functions can be shared among multiple views.
 **Menu**
 
     # ... snip
-    class Menu extends Backbone.View
+    class Menu extends mvc.View
       @include Mixins.Navigation
     
 
@@ -327,16 +330,17 @@ functions can be shared among multiple views.
     menu.toggle() # Copied from the Navigation mixin
 
 
-##### Mixins Outside of Backbone Classes
+##### Mixins Outside of MVC Classes
 
-In our `vendor.coffee` module we augment the Backbone classes with the `include` function.
+In our `vendor.coffee` module we augment the MVC classes with the `include` function.
 
-If you need to create new classes that do no subclass from Backbone classes, you can reuse the install
+If you need to create new classes that do no subclass from MVC classes, you can reuse the install
 function from the `Facade` module.
 
 Example:
 
-    Facade = require('facade')
+    Core = require('core')
+    Facade = Core.Facade
     include = Facade.include
 
     class MyModule
